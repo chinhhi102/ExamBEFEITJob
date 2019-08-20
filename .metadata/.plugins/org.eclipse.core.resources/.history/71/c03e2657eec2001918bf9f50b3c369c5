@@ -1,0 +1,101 @@
+package com.example.crudrestful.controller;
+
+import java.util.List;
+
+import com.example.crudrestful.dao.*;
+import com.example.crudrestful.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MainRESTController {
+	@Autowired
+	private JobDAO jobDAO;
+	
+	@RequestMapping("/")
+    @ResponseBody
+    public String welcome() {
+        return "Welcome to RestTemplate Example.";
+    }
+	
+	// URL:
+    // http://localhost:8080/SomeContextPath/job
+    // http://localhost:8080/SomeContextPath/job.xml
+    // http://localhost:8080/SomeContextPath/job.json
+    @RequestMapping(value = "/job", //
+            method = RequestMethod.GET, //
+            produces = { MediaType.APPLICATION_JSON_VALUE, //
+                    MediaType.APPLICATION_XML_VALUE })
+    @ResponseBody
+    public List<Job> getJob() {
+        List<Job> list = jobDAO.getAllEmployees();
+        return list;
+    }
+ 
+    // URL:
+    // http://localhost:8080/SomeContextPath/job/{empNo}
+    // http://localhost:8080/SomeContextPath/job/{empNo}.xml
+    // http://localhost:8080/SomeContextPath/job/{empNo}.json
+    @RequestMapping(value = "/job/{jobId}", //
+            method = RequestMethod.GET, //
+            produces = { MediaType.APPLICATION_JSON_VALUE, //
+                    MediaType.APPLICATION_XML_VALUE })
+    @ResponseBody
+    public Job getJob(@PathVariable("empNo") String jobId) {
+        return jobDAO.getEmployee(jobId);
+    }
+ 
+    // URL:
+    // http://localhost:8080/SomeContextPath/employee
+    // http://localhost:8080/SomeContextPath/employee.xml
+    // http://localhost:8080/SomeContextPath/employee.json
+ 
+    @RequestMapping(value = "/job", //
+            method = RequestMethod.POST, //
+            produces = { MediaType.APPLICATION_JSON_VALUE, //
+                    MediaType.APPLICATION_XML_VALUE })
+    @ResponseBody
+    public Job addJob(@RequestBody Job job) {
+ 
+        System.out.println("(Service Side) Creating employee: " + job.getId());
+ 
+        return jobDAO.addJob(job);
+    }
+ 
+    // URL:
+    // http://localhost:8080/SomeContextPath/job
+    // http://localhost:8080/SomeContextPath/job.xml
+    // http://localhost:8080/SomeContextPath/job.json
+    @RequestMapping(value = "/Job", //
+            method = RequestMethod.PUT, //
+            produces = { MediaType.APPLICATION_JSON_VALUE, //
+                    MediaType.APPLICATION_XML_VALUE })
+    @ResponseBody
+    public Job updateEmployee(@RequestBody Job job) {
+ 
+        System.out.println("(Service Side) Editing employee: " + job.getId());
+ 
+        return jobDAO.updateJob(job);
+    }
+ 
+    // URL:
+    // http://localhost:8080/SomeContextPath/job/{empNo}
+    @RequestMapping(value = "/job/{jobId}", //
+            method = RequestMethod.DELETE, //
+            produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
+    @ResponseBody
+    public void deleteJob(@PathVariable("empNo") String jobId) {
+ 
+        System.out.println("(Service Side) Deleting employee: " + jobId);
+ 
+        jobDAO.deleteJob(jobId);
+    }
+    
+    
+}

@@ -1,0 +1,5 @@
+package com.example.crudrestful.controller;
+
+public class MainRESTController {
+
+}
