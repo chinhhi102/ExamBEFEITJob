@@ -1,0 +1,27 @@
+
+squid:S4488Y"NReplace "@RequestMapping(method = RequestMethod.DELETE)" with "@DeleteMapping"(Šú†Î8ŒÃÇåÊ-HgRMINORZ
+CODE_SMELL
+{squid:S3752">Add a "method" parameter to this "@RequestMapping" annotation.(Í¹‹£øÿÿÿÿ8«ÕÅåÊ-HRRBLOCKERZVULNERABILITY
+p
+squid:S106_"9Replace this use of System.out or System.err by a logger.(Î‡Áúÿÿÿÿ8ŒÃÇåÊ-HhRMAJORZ
+CODE_SMELL
+{squid:S4488K"HReplace "@RequestMapping(method = RequestMethod.PUT)" with "@PutMapping"(Š‚úä8ŒÃÇåÊ-HeRMINORZ
+CODE_SMELL
+‚squid:S4488;"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(ì¹çÁûÿÿÿÿ8ŒÃÇåÊ-HcRMINORZ
+CODE_SMELL
+{squid:S4488-"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Šú†Î8ŒÃÇåÊ-HbRMINORZ
+CODE_SMELL
+}squid:CommentedOutCodeLine*"<This block of commented-out lines of code should be removed.(½ÏÉt8ŒÃÇåÊ-HiRMAJORZ
+CODE_SMELL
+}squid:CommentedOutCodeLineX"<This block of commented-out lines of code should be removed.(½ÏÉt8ŒÃÇåÊ-HjRMAJORZ
+CODE_SMELL
+€squid:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(ì¹çÁûÿÿÿÿ8ŒÃÇåÊ-HaRMINORZ
+CODE_SMELL
+”squid:S1488%"\Immediately return this expression instead of assigning it to the temporary variable "list".(Í¶“±ÿÿÿÿÿ8ŒÃÇåÊ-H`RMINORZ
+CODE_SMELL
+p
+squid:S106B"9Replace this use of System.out or System.err by a logger.(äø±øÿÿÿÿ8ŒÃÇåÊ-HdRMAJORZ
+CODE_SMELL
+p
+squid:S106R"9Replace this use of System.out or System.err by a logger.(ó„ÂŠûÿÿÿÿ8ŒÃÇåÊ-HfRMAJORZ
+CODE_SMELL
